@@ -1,5 +1,5 @@
 # CRYPTO PORTFOLIO APP
-![Appearange](cs50_Final_Project-Crypto-App/static/images/screenshots/homePage.png)
+![appearence of main page][1]
 #### Description:
 
 This app this app was created for my Harvard's cs50 final project.
@@ -21,3 +21,5 @@ and get a breakdown of their previous trading transactions.
 **quote page**: After logging in it offers the possibility to add or withdraw money to your existing account. It allows him to see his current wallet as a table and buy and sell any symbol he wants. 
 
 **history page**: After logging in it displays the historical transaction records as a table and allows the user to print them if desired.
+
+[1]: https://raw.githubusercontent.com/ondersabahat/cs50_Final_Project-Crypto-App/master/static/images/screenshots/homePage.png
