@@ -1,5 +1,5 @@
 # CRYPTO PORTFOLIO APP
-![Appearange](/cs50_Final_Project-Crypto-App/static/images/screenshots/homePage.png)
+![Appearange](cs50_Final_Project-Crypto-App/static/images/screenshots/homePage.png)
 #### Description:
 
 This app this app was created for my Harvard's cs50 final project.
