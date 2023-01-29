@@ -18,10 +18,22 @@ and get a breakdown of their previous trading transactions.
 
 **style.css**: Css settings the other than bootstrap. And some changes are set in html files using style tags.
 
+![apperance of main page][4]
+
 **chart page**: After logging in it takes the information with the choices of the user, brings up-to-date information about the desired symbols and date range and shows it to the user as a chart. This chart has a dynamic structure(use Chart.js module in between html script tags ), so when the user comes to a date on the chart, information is displayed and the user can add and remove any indicator they want from the chart.
 
-**quote page**: After logging in it offers the possibility to add or withdraw money to your existing account. It allows him to see his current wallet as a table and buy and sell any symbol he wants. 
+![chart][6]
+
+**quote page**: After logging in it offers the possibility to add or withdraw money to your existing account. It allows him to see his current wallet as a table and buy and sell any symbol he wants.
+
+![apperance of main page][4]
 
 **history page**: After logging in it displays the historical transaction records as a table and allows the user to print them if desired.
+![history page][5]
 
 [1]: https://raw.githubusercontent.com/ondersabahat/cs50_Final_Project-Crypto-App/master/static/images/screenshots/homePage.png
+[2]: https://raw.githubusercontent.com/ondersabahat/cs50_Final_Project-Crypto-App/master/static/images/screenshots/login.png
+[3]: https://raw.githubusercontent.com/ondersabahat/cs50_Final_Project-Crypto-App/master/static/images/screenshots/register.png
+[4]: https://raw.githubusercontent.com/ondersabahat/cs50_Final_Project-Crypto-App/master/static/images/screenshots/mainPage2.png
+[5]: https://raw.githubusercontent.com/ondersabahat/cs50_Final_Project-Crypto-App/master/static/images/screenshots/history.png
+[6]: https://raw.githubusercontent.com/ondersabahat/cs50_Final_Project-Crypto-App/master/static/images/screenshots/chart.png
