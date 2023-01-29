@@ -10,6 +10,8 @@ and get a breakdown of their previous trading transactions.
 
 ***I got help from the videos of algovibes youtube channel while developing this application***
 
+![login][2]  ![register][3]
+
 **crypto.py**: List the best known cryptocurrencies and prices from binance app. It transforms the incoming information into a pandas dataframe using the symbol, interval and lookback selected by the user. I plan to add advanced technical indicators to the charts in later versions of this application.
 
 **app.py**: The main flask app that using flask routes and self created decorators to manage transition between pages and information transfer. Using flask-sqlalchemy to save user information, wallet information and purchase-sale information to the database, to update and select informations from database. While the user is registering and logging in, the password information is encrypted and stored for security purposes.If the user is not logged in, the page information is not displayed to the user so after logging out, the security of the information is ensured.
