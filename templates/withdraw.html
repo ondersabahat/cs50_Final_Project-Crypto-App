@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title  %}
+    Withdraw Page
+{% endblock %}
+{% block main %}
+<div class="container-fluid" style="margin-top: 100px;">
+    <div class="col md-3">
+        <form action="/withdraw" method="post">
+            <label>Please give amount to withdraw: </label>
+            <input type="number" name="withdraw", id="withdraw">
+            <button class="btn btn-danger">Withdraw</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

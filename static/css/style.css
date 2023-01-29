@@ -1,0 +1,52 @@
+/* main css file  */
+
+#logo-img {
+    margin: 0;
+}
+
+.quoteusername{
+    font-family: Comic-sans;
+    font-size: xx-large;
+}
+
+.quoteheader{
+    display: flex;
+    justify-content: end;
+}
+
+.quoteamount{
+    margin-right: 20px;
+}
+
+.quotemain{
+    margin-top: 200px;
+}
+
+
+.homefooter{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+#homeleftdiv{
+    margin-top: 100px;
+    margin-left: 80px;
+    
+}
+
+.homeheader{
+    margin-bottom: 40px;
+}
+
+.homeheader2{
+    margin-bottom: 20px;
+}
+
+.homeheader3{
+    margin-top: 20px;
+    margin-bottom: 20px;

@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block title %}
+    History Page
+{% endblock %}
+
+{% block main %}
+    <!-- table that retrieves user's past transactions from database -->
+    {% if transactions %}
+    <div style="margin-left: 50px; margin-top:100px; margin-right:50px; margin-bottom:100px">
+        <h3 style="display: flex; justify-content:left; margin-bottom:20px">Transactions:</h3>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Coin</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Type</th>
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tr in transactions %}
+            <tr>
+                <th scope="col"></th>
+                <td><p class="font-weight-bold">{{tr[0]}}</p></td>
+                <td>{{'%0.2f'%tr[1]}}</td>
+                <td>{{'%0.2f'%tr[2]}}</td>
+                {% if tr[3] == 'BUY' %}
+                <td><p class="text-primary font-weight-bold">{{tr[3]}}</p></td>
+                {% else %}
+                <td><p class="text-danger font-weight-bold">{{tr[3]}}</p></td>
+                {% endif %}
+                <td>{{tr[4]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div style="display: flex; justify-content: right; margin-right:40px">
+    <!-- button that allows the user to get a breakdown of their past transactions -->
+    <button class="btn btn-info" onclick="window.print()">Print History</button>
+</div>
+    {% else %}
+        <h3>You haven't any transactions yet!</h3>
+        <a href="/quote"><button class="btn btn-primary">Go to Quote page</button></a>
+    {% endif %}
+
+
+{% endblock %}

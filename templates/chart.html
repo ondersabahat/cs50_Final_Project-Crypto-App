@@ -1,0 +1,124 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Chart Page
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid" style="margin-bottom: 60px; margin-top:12px;">
+    <!-- The form that returns the symbols from backend and sends the options received from the user back to app -->
+    <form class="form-control" action="/chart" method="post">
+        <div class="mb-3">
+            <div class="row">
+                <div class="col md-3">
+                    <label><p class="text-lg-left" style="font-size: bold;">Select a coin</p></label>
+                    <select name="sym" class="form-select form-select-lg" aria-label="Default select example">
+                        {% for sym in symbols %}
+                            <option>{{sym}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col md-3">
+                    <label><p class="text-lg-left" style="font-size: bold;">Select an interval</p></label>
+                    <select name="interval">
+                        <option>1h</option>
+                        <option>2h</option>
+                        <option>4h</option>
+                        <option>1d</option>
+                    </select>
+                </div>
+                <div class="col md-3">
+                    <label><p class="text-lg-left" style="font-size: bold;">Select a lookback</p></label>
+                    <select name="lookback">
+                        <option>100</option>
+                        <option>200</option>
+                        <option>400</option>
+                    </select>
+                </div>
+                <div class="col md-3"><button class="btn btn-info">Get</button></div>
+                
+            </div>
+        </div>
+    </form>
+</div>
+<!-- a chart showing information-->
+<div class="container-fluid">
+    <div class="container col-md-10">
+        <div style="background-color: white;" class="col md-6">
+            <h3 style="color: black; font-weight:bold">{{symbol}}</h3>
+            <canvas id="myChart" max-width="600px" max-height="400px"></canvas>
+        </div>
+    </div>
+</div>
+<!-- the main js code to visulaize chart to user for using Chart module-->
+<script>
+    const dates = {{time}};
+    var date = [];
+    for(let i = 0; i < dates.length; i++){
+        date.push(new Date(dates[i]).toLocaleDateString("en-US"));
+    }
+    const data = {
+        labels: date,
+        datasets: [
+        {
+            label: 'High',
+            backgroundColor: 'rgb(0, 255, 0)',
+            borderColor: 'rgb(0, 255, 0)',
+            borderWidth: 1,
+            radius: 1,
+            hoverBorderWidth: 3,
+            data: {{high}}
+        },
+        {
+            label: 'Close',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            borderWidth: 1,
+            radius: 1,
+            hoverBorderWidth: 3,
+            data: {{close}}
+        },
+        {
+            label: 'Low',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'rgb(255, 0, 0)',
+            borderWidth: 1,
+            radius: 1,
+            hoverBorderWidth: 3,
+            data: {{low}}
+        },
+        ]
+    };
+    const config = {
+        type: 'line', 
+        data: data,
+        options: {
+            interaction: {
+                // Overrides the global setting
+                mode: 'index'
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        font: {
+                            size: 16
+                        },
+                        color: 'black'
+                    }
+                }
+            },
+            scales: {
+                y: {
+                  ticks: { color: 'black'}
+                },
+                x: {
+                  ticks: { color: 'black'}
+                } 
+            }
+        },
+       
+        
+    };
+    const myLineChart = new Chart(document.getElementById("myChart"), config);
+</script>
+{% endblock %}

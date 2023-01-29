@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="row">
+            <div class="col md-6" id="homeleftdiv">
+                <h1 class="homeheader"><span >Start now to prepare your crypto portfolio</span></h1>
+                <h5 class="homeheader2"><span >By registering on this site, you can easily buy or sell cryptocurrencies and create your portfolio.</span></h5>
+                <a href="/register"><button class="btn btn-primary">Get started</button></a>
+                <h5 class="homeheader3"><span >Have you already registered:</span></h5>
+                <a href="/login"><button class="btn btn-primary">Get logged in</button></a>
+
+            </div>
+            <div class="col md-6">
+                <img class="img-fluid" alt="" src="/static/images/home.jpg">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+<div class="homefooter">
+    All rights are reserved &copy;
+</div>
+{% endblock %}

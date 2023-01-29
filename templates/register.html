@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block main %}
+    <!-- this block for the flash messages-->
+    {% with messages = get_flashed_messages()  %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p class="text-danger" style="font-size:x-large; font-weight: bold;">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+ <!-- register form -->   
+<div class="container col-md-3" style="padding-top: 80px;">
+    <form class="form-control border-dark" action="/register" method="post">
+        <div class="mb-3" style="text-align: left;">
+            <label><h3 style="font-weight: bold; margin-bottom: 20px;">Create an account</h3></label>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="Enter email" type="email">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="username" name="username" placeholder="Enter username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Enter password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password2" name="password2" placeholder="Enter password again" type="password">
+        </div>
+        <div class="mb-3" style="text-align: left;">
+            <label><p class="text-secondary">Don't worry, your information is safe with us.</p></label>
+        </div>
+        <div class="mb-3" style="margin-top: 30px;">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
